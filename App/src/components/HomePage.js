@@ -16,6 +16,7 @@ const HomePage = () => {
           setUserList(res.data))
         .catch(error => console.log(error));
     }
+    
     return (
       
       <div className="whole-page">
