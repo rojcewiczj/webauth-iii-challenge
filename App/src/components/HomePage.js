@@ -4,26 +4,26 @@ import axiosWithAuth from './axiosWithAuth'
 
 const HomePage = () => {
     const [userList, setUserList] = useState([])
+    console.log(userList)
     useEffect(() => {
-      getData();
-    }, []);
+    
+  
     const getData = () => {
      
       axiosWithAuth()
-
         .get('/users') 
         .then(res => 
-          setUserList(res.data))
+          setUserList(res.data.users))
         .catch(error => console.log(error));
     }
-    
+      getData(); 
+     }, []);
     return (
       
       <div className="whole-page">
-      
-       {userList.map(user => (
-           <p>{user.name}</p>
-    ))}
+         {userList.map(user => (
+           <p>{user.username}</p>
+         ))}
      <h1>Hello</h1>
       </div>
       

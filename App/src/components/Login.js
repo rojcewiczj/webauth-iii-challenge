@@ -32,8 +32,8 @@ class Login extends React.Component {
         .post('/auth/login'
           , this.state.users)
         .then(res => {
-        console.log(res.data)
-        localStorage.setItem('token', res.data.payload);
+        console.log(res.data.token)
+        localStorage.setItem('token', res.data.token);
           this.props.history.push('/protected');
           this.setState({ loading: false });
         })
